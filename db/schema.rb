@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_04_185802) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_04_212013) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,10 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_185802) do
     t.string "photo"
     t.text "bio"
     t.integer "postscounter"
-    t.bigint "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_users_on_author_id"
   end
 
   add_foreign_key "comments", "posts"
@@ -60,5 +58,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_04_185802) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users", column: "author_id"
   add_foreign_key "posts", "users", column: "author_id"
-  add_foreign_key "users", "users", column: "author_id"
 end
