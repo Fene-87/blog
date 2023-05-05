@@ -54,7 +54,6 @@ RSpec.describe Comment, type: :model do
       @comment.update_comments_counter
       @comment.update_comments_counter
 
-
       expect(@post.comments_counter).to eq(3)
     end
   end

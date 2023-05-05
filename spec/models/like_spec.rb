@@ -49,7 +49,6 @@ RSpec.describe Like, type: :model do
       @like.update_likes_counter
       @like.update_likes_counter
 
-
       expect(@post.likes_counter).to eq(3)
     end
   end
