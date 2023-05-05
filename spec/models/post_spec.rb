@@ -61,7 +61,8 @@ RSpec.describe Post, type: :model do
       @user = User.create(name: 'John Doe', photo: 'https://picsum.photos/200/300', bio: 'I am John Doe')
       @user.postscounter = 4
       @user.save!
-      @post = @user.posts.create!(title: 'My first Post', text: 'This is my post', comments_counter: 0, likes_counter: 0)
+      @post = @user.posts.create!(title: 'My first Post', text: 'This is my post', comments_counter: 0,
+                                  likes_counter: 0)
       @post.save!
 
       @comment1 = @post.comments.create!(author_id: @user.id, post_id: @post.id, text: 'This is my first comment')
@@ -70,7 +71,7 @@ RSpec.describe Post, type: :model do
       @comment4 = @post.comments.create!(author_id: @user.id, post_id: @post.id, text: 'This is my fourth comment')
       @comment5 = @post.comments.create!(author_id: @user.id, post_id: @post.id, text: 'This is my fifth comment')
       @comment6 = @post.comments.create!(author_id: @user.id, post_id: @post.id, text: 'This is my sixth comment')
-    
+
       expect(@post.recent_comments).to eq([@comment6, @comment5, @comment4, @comment3, @comment2])
     end
 
@@ -78,10 +79,11 @@ RSpec.describe Post, type: :model do
       @user.postscounter = 0
       @user.save!
 
-      @post = Post.create(author: @user, title: 'My Post', text: 'This is my post', comments_counter: 0, likes_counter: 0)
+      @post = Post.create(author: @user, title: 'My Post', text: 'This is my post', comments_counter: 0,
+                          likes_counter: 0)
       @post.update_post_counter
       @post.update_post_counter
-      
+
       expect(@user.postscounter).to eq(3)
     end
   end

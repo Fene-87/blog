@@ -40,11 +40,15 @@ RSpec.describe User, type: :model do
       @user = User.create(name: 'John Doe', photo: 'https://picsum.photos/200/300', bio: 'I am John Doe')
       @user.postscounter = 4
       @user.save!
-      @post1 = @user.posts.create!(title: 'My first Post', text: 'This is my post', comments_counter: 2, likes_counter: 1)
-      @post2 = @user.posts.create!(title: 'My second Post', text: 'This is my post',comments_counter: 2, likes_counter: 1)
-      @post3 = @user.posts.create!(title: 'My third Post', text: 'This is my post', comments_counter: 2, likes_counter: 1)
-      @post4 = @user.posts.create!(title: 'My last Post', text: 'This is my post', comments_counter: 2, likes_counter: 1)
-    
+      @post1 = @user.posts.create!(title: 'My first Post', text: 'This is my post', comments_counter: 2,
+                                   likes_counter: 1)
+      @post2 = @user.posts.create!(title: 'My second Post', text: 'This is my post', comments_counter: 2,
+                                   likes_counter: 1)
+      @post3 = @user.posts.create!(title: 'My third Post', text: 'This is my post', comments_counter: 2,
+                                   likes_counter: 1)
+      @post4 = @user.posts.create!(title: 'My last Post', text: 'This is my post', comments_counter: 2,
+                                   likes_counter: 1)
+
       expect(@user.recent_posts).to eq([@post4, @post3, @post2])
     end
   end
