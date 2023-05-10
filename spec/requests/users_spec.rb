@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :request do
+RSpec.describe "Users", type: :request do
     describe 'GET' do
         describe '/users/index' do
             it('returns a success response') do
