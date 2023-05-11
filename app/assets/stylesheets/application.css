@@ -109,3 +109,44 @@ body {
   gap: 10px;
   font-size: 14px;
 }
+
+.comments_list {
+  list-style: none;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment_info {
+  display: flex;
+  gap: 10px;
+}
+
+.comment_author {
+
+}
+
+.comment_text {
+
+}
+
+.post_wrapper {
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.username_post {
+  display: flex;
+  gap: 10rem;
+  max-width: 50rem;
+}
+
+.comments_edit {
+  width: 27.5rem;
+  margin-top: 0;
+}

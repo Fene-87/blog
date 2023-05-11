@@ -1,23 +1,21 @@
-<h1>Here is post information for a given post</h1>
-
-<section>
-  <div>
-    <div>
+<section class='main_section'>
+  <div class='post_wrapper'>
+    <div class='username_post'>
       <h3>Post <%= @post.id%> by <%=@post.author.name%></h3>
-      <div>
-        <p>Comments: <%= @post.comments_counter || 0 %></p>
-        <p>Likes: <%= @post.likes_counter || 0 %></p>
+      <div class='comments_likes'>
+        <p class='comments_no'>Comments: <%= @post.comments_counter || 0 %></p>
+        <p class='likes_no'>Likes: <%= @post.likes_counter || 0 %></p>
       </div>
     </div>
-    <p><%= @post.text %></p>
+    <p class='post_text'><%= @post.text %></p>
   </div>
 
   <div>
-    <ul>
+    <ul class='comments_list comments_edit'>
       <% @post.comments.each do |comment|%>
-        <li>
-          <p><%= comment.author.name %></p>
-          <p><%= comment.text %></p>
+        <li class='comment_info'>
+          <p class='comment_author'><%= comment.author.name %></p>
+          <p class='comment_text'><%= comment.text %></p>
         </li>
       <% end %>
     </ul>

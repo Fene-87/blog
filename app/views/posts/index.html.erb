@@ -10,25 +10,27 @@
     </div>
   </div>
 
-  <ul>
+  <ul class='posts_list'>
     <% @user.posts.each_with_index do |post, index|%>
       <li>
-        <div>
-          <h4>post #<%= index + 1%></h4>
-          <p><%= post.text%></p>
-          <div>
-            <p>Comments: <%= post.comments_counter || 0 %></p>
-            <p>Likes: <%= post.likes_counter || 0 %></p>
+        <div class='post_card'>
+          <h4 class='post_header'>post #<%= index + 1%></h4>
+          <p class='post_text'><%= post.text%></p>
+          <div class='comments_likes'>
+            <p class='comments_no'>Comments: <%= post.comments_counter || 0 %></p>
+            <p class='likes_no'>Likes: <%= post.likes_counter || 0 %></p>
           </div>
+
+          <ul class='comments_list'>
+            <% post.comments.each do |comment| %>
+              <li class='comment_info'>
+                <p class='comment_author'><%= comment.author.name %>:</p>
+                <p class='comment_text'><%= comment.text %></p>
+              </li>
+            <% end %>
+          </ul>
         </div>
-        <ul>
-          <% post.comments.each do |comment|%>
-            <li>
-              <p><%= comment.author.name %></p>
-              <p><%= comment.text %></p>
-            </li>
-          <% end %>
-        </ul>
+
       </li>
     <% end %>
   </ul>
