@@ -1,2 +1,39 @@
 <h1>Here is a list of posts for a given user</h1>
 
+<section>
+  <div>
+    <div>
+      <img src= <%= @user.photo %> alt= <%= @user.name %> />
+    </div>
+
+    <div>
+      <h2><%= @user.name %></h2>
+      <p>Number of Posts: <%= @user.postscounter || 0 %></p>
+    </div>
+  </div>
+
+  <ul>
+    <% @user.posts.each_with_index do |post, index|%>
+      <li>
+        <div>
+          <h4>Post #<%= index + 1%></h4>
+          <p><%= post.text%></p>
+          <div>
+            <p>Comments: <%= post.comments_counter || 0 %></p>
+            <p>Likes: <%= post.likes_counter || 0 %></p>
+          </div>
+        </div>
+        <ul>
+          <% post.comments.each do |comment|%>
+            <li>
+              <p><%= comment.author.name %></p>
+              <p><%= comment.text %></p>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+
+  <a href="#">Pagination</a>
+</section>
