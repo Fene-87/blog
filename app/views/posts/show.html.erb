@@ -1,1 +1,25 @@
 <h1>Here is post information for a given post</h1>
+
+<section>
+  <div>
+    <div>
+      <h3>Post <%= @post.id%> by <%=@post.author.name%></h3>
+      <div>
+        <p>Comments: <%= @post.comments_counter || 0 %></p>
+        <p>Likes: <%= @post.likes_counter || 0 %></p>
+      </div>
+    </div>
+    <p><%= @post.text %></p>
+  </div>
+
+  <div>
+    <ul>
+      <% @post.comments.each do |comment|%>
+        <li>
+          <p><%= comment.author.name %></p>
+          <p><%= comment.text %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>

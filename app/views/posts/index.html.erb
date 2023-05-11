@@ -16,7 +16,7 @@
     <% @user.posts.each_with_index do |post, index|%>
       <li>
         <div>
-          <h4>Post #<%= index + 1%></h4>
+          <h4>post #<%= index + 1%></h4>
           <p><%= post.text%></p>
           <div>
             <p>Comments: <%= post.comments_counter || 0 %></p>
