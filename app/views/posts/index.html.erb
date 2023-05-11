@@ -1,14 +1,12 @@
-<h1>Here is a list of posts for a given user</h1>
-
-<section>
-  <div>
-    <div>
+<section class='main_section'>
+  <div class='user_card'>
+    <div class='user_img'>
       <img src= <%= @user.photo %> alt= <%= @user.name %> />
     </div>
 
-    <div>
-      <h2><%= @user.name %></h2>
-      <p>Number of Posts: <%= @user.postscounter || 0 %></p>
+    <div class='user_stuff'>
+      <p class='user_name'><%= @user.name %></p>
+      <p class='posts_no'>Number of Posts: <%= @user.postscounter || 0 %></p>
     </div>
   </div>
 

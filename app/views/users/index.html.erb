@@ -1,16 +1,15 @@
-<h1>Here is a list of all users</h1>
-
-<section>
-  <ul>
+<section class='main_section'>
+  <h1>Here is a list of all users</h1>
+  <ul class='users_list'>
     <% @users.each do |user| %>
-      <li>
-        <div>
+      <li class='user_card'>
+        <div class='user_img'>
           <img src= <%= user.photo %> alt= <%= user.name %> />
         </div>
 
-        <div>
-          <p><%= user.name %></p>
-          <p>Number of Posts: <%= user.postscounter || 0 %></p>
+        <div class='user_stuff'>
+          <p class='user_name'><%= user.name %></p>
+          <p class='posts_no'>Number of Posts: <%= user.postscounter || 0 %></p>
         </div>
       </li>
     <% end %>

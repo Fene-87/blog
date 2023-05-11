@@ -1,33 +1,32 @@
-<h1>Here is user information for a given user</h1>
-<section>
-  <div>
-    <div>
+<section class='main_section'>
+  <div class='user_card'>
+    <div class='user_img'>
       <img src= <%= @user.photo %> alt= <%= @user.name %> />
     </div>
 
-    <div>
-      <h2><%= @user.name %></h2>
-      <p>Number of Posts: <%= @user.postscounter || 0 %></p>
+    <div class='user_stuff'>
+      <p class='user_name'><%= @user.name %></h2>
+      <p class='posts_no'>Number of Posts: <%= @user.postscounter || 0 %></p>
     </div>
   </div>
  
-  <div>
-    <h4>Bio</h4>
-    <p><%= @user.bio %></p>
+  <div class='bio'>
+    <h4 class='bio_header'>Bio</h4>
+    <p class='bio_text'><%= @user.bio %></p>
   </div>
 
-  <ul>
+  <ul class='posts_list'>
     <% if @user.posts.empty? %>
-      <li><%= @user.name %> has no posts</li>
+      <li class='post_card'><%= @user.name %> has no posts</li>
     <% end %>
 
     <% @user.recent_posts.each_with_index do |post, index| %>
-      <li>
-        <h4>Post #<%= index + 1 %></h4>
-        <p><%= post.text %></p>
-        <div>
-          <p>Comments: <%= post.comments_counter || 0 %></p>
-          <p>Likes: <%= post.likes_counter || 0 %></p>
+      <li class='post_card'>
+        <h4 class='post_header'>Post #<%= index + 1 %></h4>
+        <p class='post_text'><%= post.text %></p>
+        <div class='comments_likes'>
+          <p class='comments_no'>Comments: <%= post.comments_counter || 0 %></p>
+          <p class='comments_no'>Likes: <%= post.likes_counter || 0 %></p>
         </div>
       </li>
     <% end %>
