@@ -16,7 +16,8 @@
 * {
   margin: 0;
   padding: 0;
- }
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--very-light-grey);
@@ -75,10 +76,6 @@ body {
   margin-top: 20px;
 }
 
-.bio_header {
-  
-}
-
 .bio_text {
   margin-top: 10px;
 }
@@ -93,10 +90,6 @@ body {
   padding: 1rem 3rem;
   width: 26.5rem;
   margin-top: 20px;
-}
-
-.post_header {
-
 }
 
 .post_text {
@@ -124,14 +117,6 @@ body {
 .comment_info {
   display: flex;
   gap: 10px;
-}
-
-.comment_author {
-
-}
-
-.comment_text {
-
 }
 
 .post_wrapper {
