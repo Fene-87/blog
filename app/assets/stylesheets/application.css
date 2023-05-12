@@ -13,3 +13,125 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--very-light-grey);
+  color: var(--dark-grey);
+}
+
+.main_section {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.users_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+
+.user_card {
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  display: flex;
+  padding: 1rem 3rem;
+  gap: 3rem;
+  max-width: 50rem;
+}
+
+.user_img {
+  border: 1px solid #d3d3d3;
+  height: 50px;
+  width: 60px;
+}
+
+.user_stuff {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  border: 1px solid black;
+  padding: 0 3rem;
+  border-radius: 5px;
+}
+
+.posts_no {
+  align-self: flex-end;
+}
+
+.bio {
+  max-width: 50rem;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  padding: 1rem 3rem;
+  width: 26.5rem;
+  margin-top: 20px;
+}
+
+.bio_text {
+  margin-top: 10px;
+}
+
+.posts_list {
+  list-style: none;
+}
+
+.post_card {
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  padding: 1rem 3rem;
+  width: 26.5rem;
+  margin-top: 20px;
+}
+
+.post_text {
+  margin-top: 15px;
+}
+
+.comments_likes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.comments_list {
+  list-style: none;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment_info {
+  display: flex;
+  gap: 10px;
+}
+
+.post_wrapper {
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.username_post {
+  display: flex;
+  gap: 10rem;
+  max-width: 50rem;
+}
+
+.comments_edit {
+  width: 27.5rem;
+  margin-top: 0;
+}

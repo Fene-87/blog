@@ -1,1 +1,37 @@
-<h1>Here is user information for a given user</h1>
+<section class='main_section'>
+  <div class='user_card'>
+    <div class='user_img'>
+      <img src= <%= @user.photo %> alt= <%= @user.name %> />
+    </div>
+
+    <div class='user_stuff'>
+      <p class='user_name'><%= @user.name %></h2>
+      <p class='posts_no'>Number of Posts: <%= @user.postscounter || 0 %></p>
+    </div>
+  </div>
+ 
+  <div class='bio'>
+    <h4 class='bio_header'>Bio</h4>
+    <p class='bio_text'><%= @user.bio %></p>
+  </div>
+
+  <ul class='posts_list'>
+    <% if @user.posts.empty? %>
+      <li class='post_card'><%= @user.name %> has no posts</li>
+    <% end %>
+
+    <% @user.recent_posts.each_with_index do |post, index| %>
+      <li class='post_card'>
+        <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
+        <p class='post_text'><%= post.text %></p>
+        <div class='comments_likes'>
+          <p class='comments_no'>Comments: <%= post.comments_counter || 0 %></p>
+          <p class='likes_no'>Likes: <%= post.likes_counter || 0 %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <a href="<%= @user.id %>/posts">See all posts</a>
+</section>
+
