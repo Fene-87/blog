@@ -1,0 +1,17 @@
+<section>
+  <h1>Create a new Post.</h1>
+
+  <%= form_with model: @post, url: user_posts_path do |form| %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title, placeholder: 'Enter Post Title', required: true %>
+    </div>
+
+    <div>
+      <%= form.label :text%>
+      <%= form.text_area :text, placeholder: 'Enter Post Description', required: true %>
+    </div>
+
+    <%= form.submit "Create Post"%>
+  <% end %>
+</section>
