@@ -14,7 +14,7 @@
     <% @user.posts.each_with_index do |post, index|%>
       <li>
         <div class='post_card'>
-          <h4 class='post_header'>post #<%= index + 1%></h4>
+          <h4><%= link_to post.title, user_post_path(@user, post) %></h4>
           <p class='post_text'><%= post.text%></p>
           <div class='comments_likes'>
             <p class='comments_no'>Comments: <%= post.comments_counter || 0 %></p>

@@ -22,7 +22,7 @@
 
     <% @user.recent_posts.each_with_index do |post, index| %>
       <li class='post_card'>
-        <h4 class='post_header'>Post #<%= index + 1 %></h4>
+        <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
         <p class='post_text'><%= post.text %></p>
         <div class='comments_likes'>
           <p class='comments_no'>Comments: <%= post.comments_counter || 0 %></p>
