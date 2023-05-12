@@ -10,5 +10,24 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
+  end
+
+  def create
+    @post = current_user.posts.new(post_params)
+    
+    if @post.save
+      flash[:success] = 'Post created successfully.'
+      redirect_to "/users/#{current_user.id}/posts"
+    else
+      flash{:danger} = 'Post could not be created.'
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
   end
 end
