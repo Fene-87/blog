@@ -135,3 +135,24 @@ body {
   width: 27.5rem;
   margin-top: 0;
 }
+
+.form_title {
+  margin-top: 10px;
+}
+
+.form_input {
+  margin-left: 20px;
+}
+
+.form_text {
+  margin-top: 20px;
+}
+
+.form_text_area {
+  margin-left: 20px;
+}
+
+.form_button {
+  justify-self: center;
+  margin: 20px;
+}

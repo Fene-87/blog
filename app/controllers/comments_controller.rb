@@ -1,12 +1,13 @@
 class CommentsController < ApplicationController
     def new
         @comment = Comment.new
-        @post = Post.find(params[:id])
+        @post = Post.find(params[:post_id])
+        @user = @post.author
     end
 
     def create
         @comment = current_user.comments.new(comment_params)
-        @post = Post.find(params[:id])
+        @post = Post.find(params[:post_id])
         @comment.post_id = @post.id
 
         if @comment.save
@@ -15,12 +16,12 @@ class CommentsController < ApplicationController
             flash[:danger] = 'Comment could not be created.'
         end
 
-        redirect_to "/users/#{current_user.id}/posts/params[:post_id]"
+        redirect_to user_post_path(@user, @post)
     end
 
     private
 
     def comment_params
-        params.require(:comment).permit(:body)
+        params.require(:comment).permit(:text)
     end
 end
