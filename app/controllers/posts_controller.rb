@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post.comments_counter = 0
     @post.likes_counter = 0
     @post.author = current_user
-    
+
     if @post.save
       flash[:success] = 'Post created successfully.'
       redirect_to "/users/#{current_user.id}/posts"
