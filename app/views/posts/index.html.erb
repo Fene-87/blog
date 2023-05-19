@@ -24,9 +24,11 @@
           </div>
 
           <% if can?(:destroy, post)%>
-          <%= link_to user_post_path(@user, post), method: :delete, data: { confirm: 'Are you sure?' } do %>
-            Delete
-          <% end %>
+          <%= link_to user_post_path(@user, post), data: {
+            turbo_method: :delete
+          } do %>
+            <button><%= t('.delete') %></button>
+            <% end %>
         <% end %>
 
           <ul class='comments_list'>
