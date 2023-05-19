@@ -249,12 +249,9 @@ GEM
     tzinfo-data (1.2023.3)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
-<<<<<<< HEAD
     warden (1.2.9)
       rack (>= 2.0.9)
-=======
     uniform_notifier (1.16.0)
->>>>>>> f9716794b8dc01c73e0d4f84fe39fb6b75851005
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
