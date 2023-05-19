@@ -15,9 +15,16 @@
     <ul class='comments_list comments_edit'>
       <% @post.comments.each do |comment|%>
         <li class='comment_info'>
-          <p class='comment_author'><%= comment.author.name %></p>
+          <p class='comment_author'><%= comment.author.name %>:</p>
           <p class='comment_text'><%= comment.text %></p>
         </li>
+        <% if can?(:destroy, comment)%>
+        <%= link_to user_post_comment_path(@user, comment.post, comment.id), data: {
+          turbo_method: :delete
+        } do %>
+          <button><%= t('.delete') %></button>
+          <% end %>
+          <% end %>
       <% end %>
     </ul>
   </div>

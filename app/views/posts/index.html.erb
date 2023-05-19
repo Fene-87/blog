@@ -23,6 +23,14 @@
             <p class='likes_no'>Likes: <%= post.likes_counter || 0 %></p>
           </div>
 
+          <% if can?(:destroy, post)%>
+          <%= link_to user_post_path(@user, post), data: {
+            turbo_method: :delete
+          } do %>
+            <button><%= t('.delete') %></button>
+            <% end %>
+        <% end %>
+
           <ul class='comments_list'>
             <% post.comments.each do |comment| %>
               <li class='comment_info'>
