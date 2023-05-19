@@ -32,7 +32,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     authorize! :destroy, @post
 
-    puts "Authorization successful"
+    puts 'Authorization successful'
 
     if @post.destroy
       flash[:success] = 'Post deleted successfully.'
