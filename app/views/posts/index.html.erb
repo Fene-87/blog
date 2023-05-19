@@ -23,6 +23,12 @@
             <p class='likes_no'>Likes: <%= post.likes_counter || 0 %></p>
           </div>
 
+          <% if can?(:destroy, post)%>
+          <%= link_to user_post_path(@user, post), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            Delete
+          <% end %>
+        <% end %>
+
           <ul class='comments_list'>
             <% post.comments.each do |comment| %>
               <li class='comment_info'>
