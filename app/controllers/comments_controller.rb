@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
     @comments = @post.comments
-    
+
     render json: @comments
   end
 

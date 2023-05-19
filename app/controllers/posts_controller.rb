@@ -5,8 +5,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml { render xml: @posts}
-      format.json { render json: @posts}
+      format.xml { render xml: @posts }
+      format.json { render json: @posts }
     end
   end
 
@@ -16,8 +16,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml { render xml: @post.comments}
-      format.json { render json: @post.comments}
+      format.xml { render xml: @post.comments }
+      format.json { render json: @post.comments }
     end
   end
 
